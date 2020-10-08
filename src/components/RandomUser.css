@@ -1,0 +1,13 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.user-card {
+    background-color: rgb(199, 106, 19);
+    color: whitesmoke;
+    margin: 5px;
+    padding: 5px;
+    width: 150px;
+}
