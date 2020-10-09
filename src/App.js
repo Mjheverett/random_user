@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RandomUser from './components/RandomUser';
+import { Container, Box  } from 'bloomer';
 import './App.css';
 
 class App extends Component {
