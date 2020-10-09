@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import RandomUser from './components/RandomUser';
-import { Container, Box  } from 'bloomer';
+import ReactDOM from 'react-dom'
+
+import 'bulma/css/bulma.css';
 import './App.css';
+
+import { Button, Card, CardImage, Container, Hero, HeroBody, Title } from 'bloomer';
+
+import RandomUser from './components/RandomUser';
 
 class App extends Component {
   state = {
@@ -9,7 +14,7 @@ class App extends Component {
   };
 
   loadData = async () => {
-    const response = await fetch('https://randomuser.me/api/?results=14');
+    const response = await fetch('https://randomuser.me/api/?results=10');
     const data = await response.json();
     return data;
   }
@@ -35,15 +40,21 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>Random User</h1>
-        </header>
-        {userData.length ? (
-          <RandomUser userData={userData} />
-          ) : (
-            <p>No User Data</p>
-          )}
-        <button onClick={this.handleClick}>Load More Users</button>
+        <Container isFluid>
+          <Hero isColor='info' isSize='medium'>
+            <HeroBody>
+              <Container hasTextAlign='centered'>
+                <Title>Random User</Title>
+              </Container>
+            </HeroBody>
+          </Hero>
+          {userData.length ? (
+            <RandomUser userData={userData} />
+            ) : (
+              <p>No User Data</p>
+            )}
+          <Button isColor='info' onClick={this.handleClick}>Load More Users</Button>
+        </Container>
       </div>
     );
   }
