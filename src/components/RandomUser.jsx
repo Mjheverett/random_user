@@ -3,7 +3,7 @@ import React from "react";
 import 'bulma/css/bulma.css';
 import "./RandomUser.css";
 
-import { Card, CardContent, CardImage, Container, Image, Media, MediaContent, Subtitle, Title } from 'bloomer';
+import { Card, CardContent, CardImage, Container, Image, Media, MediaContent, Title } from 'bloomer';
 
 const RandomUser = props => {
     const { userData } = props;
